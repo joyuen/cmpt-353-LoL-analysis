@@ -36,20 +36,30 @@ def global_pick(lck, lec, lcs, lpl):
     temp_lpl = lpl[lpl["CTR%"] >= 0.75]
 
     globalChamps = set(temp_lck.string) & set(temp_lec.string) & set(temp_lcs.string) & set(temp_lpl.string)
-    print(globalChamps)
+    #print(globalChamps)
 
 def most_played(lck, lec, lcs, lpl):
     globalChamps = set(lck.string) & set(lec.string) & set(lcs.string) & set(lpl.string)
 
+    print("Top 5 LCK Counter Pick Champions")
     print(lck.sort_values(by=["GPasCTR"], ascending=False).head())
+    print("\n")
+    print("Top 5 LEC Counter Pick Champions")
     print(lec.sort_values(by=["GPasCTR"], ascending=False).head())
+    print("\n")
+    print("Top 5 LCS Counter Pick Champions")
     print(lcs.sort_values(by=["GPasCTR"], ascending=False).head())
-    print(lpl.sort_values(by=["GPasCTR"], ascending=False).head())
+    print("\n")
+    print("Top 5 LPL Counter Pick Champions")
+    print(lpl.sort_values(by=["GPasCTR"], ascending=False).head())  
+    print("\n")
     
     frames = [lck, lec, lcs, lpl]
     res = pd.concat(frames)
     res = res.groupby(["Champion", "Pos", "string"], as_index=False).mean()
     res = res[res["string"].isin(globalChamps)]
+
+    print("Most Played Counter Pick Champions in all 4 regions")
     print(res.sort_values(by=["GPasCTR"], ascending=False))
 
 def counterpick_winrate(df, league):
@@ -61,12 +71,13 @@ def counterpick_winrate(df, league):
     fit = stats.linregress(new_df["CTR%"], new_df["W%"])
     new_df["prediction"] = new_df["CTR%"] * fit.slope + fit.intercept
 
-    plt.figure()
+    plt.figure(figsize=(10, 5))
     plt.plot(new_df["CTR%"], new_df["W%"], 'b.', alpha=0.5)
     plt.title("Relationship between Counter Pick Rate and Win Rate")
     plt.xlabel("Counter Pick Percentage")
     plt.ylabel("Win Rate Percentage")
     plt.plot(new_df['CTR%'], new_df['prediction'], 'r-', linewidth=3)
+    plt.legend(['Actual Data', 'Fit Line'])
     plt.savefig(league + "_counterpick_winrate.png")
 
     
@@ -76,8 +87,6 @@ def main():
     # 2) most played counterpick for each region
     # 3) most played counterpick globally
     # 4) Relationship between counter pick % and win rate %
-    # 5) Do counterpick champions perform better in lane 
-    # 6) palyers taht benefit the most from counterpicking
 
     lck = filter_null(pd.read_csv('LCK.csv'))
     lec = filter_null(pd.read_csv('LEC.csv'))
