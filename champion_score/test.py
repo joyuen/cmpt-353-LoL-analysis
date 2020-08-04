@@ -14,7 +14,7 @@ def filter_null(df):
 
 #change malformed strings in champion stats to useable ints where applicable
 def percent_to_int(x):
-    if type(x) == str:
+    try:
         if "%" in x:
             x = int(x.replace('%','').replace('.',''))
             if x > 100:
@@ -24,7 +24,7 @@ def percent_to_int(x):
                 return x/100
         else:
             return x
-    else:
+    except:
         return x
     
 #Games/winrate bias
@@ -56,7 +56,6 @@ def feature_correlation_region(matches, region, feature_list):
     matches_red = pd.DataFrame(scaler.fit_transform(matches_red), columns=matches_red.columns)
     matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
     return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')
- 
 #only first line is different from region
 def feature_correlation_team(matches, team, feature_list):
     matches = matches[matches['team'] == team]
@@ -77,74 +76,41 @@ def feature_correlation_player(matches, team, position, feature_list):
     matches = matches[matches['team'] == team]
     matches = matches[matches['position'] == position][feature_list]
     matches['kp'] = matches['kills']/matches['teamkills']
-    matches_red = matches[matches['side'] == 'Blue'][feature_list]
-    matches_blue = matches[matches['side'] == 'Red'][feature_list]
     scaler = MinMaxScaler()
-    matches_red = pd.DataFrame(scaler.fit_transform(matches_red), columns=matches_red.columns)
-    matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
     matches = pd.DataFrame(scaler.fit_transform(matches), columns=matches.columns)
-    return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')
+    return matches.corr(method='pearson')
 
-#evaluate at 10 stats
-def eval_at_10(x,y,type_stat):
-    if (x > y) or (x==y):
-        if type_stat == "cs":
-            if (x - y) < 15:
-                return (1 + (x-y)/15)
-            else:
-                return 2
-        if type_stat == "g":
-            if (x - y) < 300:
-                return (1 + (x-y)/300)
-            else:
-                return 2
-        if type_stat == "xp":
-            if (x - y) < 300:
-                return (1 + (x-y)/300)
-            else:
-                return 2           
-    else:
-        if type_stat == "cs":
-            if(x - y) > -15:
-                return (1 + (x-y)/15)
-            else:
-                return 0
-        if type_stat == "g":
-            if (x - y) > -300:
-                return (1 + (x-y)/300)
-            else:
-                return 0
-        if type_stat == "xp":
-            if (x - y) > -300:
-                return (1 + (x-y)/300)
-            else:
-                return 0   
+
 
 def performance_on_champ(champion_stats, matches, player, champion):
-    try:
-        matches = matches[matches['player'] == player]
-        matches = matches[matches['champion'] == champion]
-        champion_stats = champion_stats[champion_stats['Champion'] == champion]
-        matches['deaths'] = matches['deaths'].replace(0,1)
-        matches['kda'] = (matches['kills']+matches['assists'])/matches['deaths']
-        matches['kp'] = matches['kills']/matches['teamkills']
-        matches = matches[['kda','kp','cspm', 'dpm', 'damageshare', 'xpdiffat10', 'csdiffat10', 'golddiffat10', 'wpm', 'wcpm']].mean(axis=0)  
-        champion_stats = champion_stats.applymap(lambda x: percent_to_int(x))
-        #arbitrary computation
-        kda = float(matches['kda'])/float(champion_stats['KDA'])   
-        kp = float(matches['kp'])/float(champion_stats['KP'])
-        cspm = float(matches['cspm'])/float(champion_stats['CSPM'])
-        dpm = float(matches['dpm'])/float(champion_stats['DPM'])
-        damageshare =float(matches['damageshare'])/float(champion_stats['DMG%'])
-        xd10 = eval_at_10(float(matches['xpdiffat10']),float(champion_stats['XPD10']),"xp")
-        cd10 = eval_at_10(float(matches['csdiffat10']),float(champion_stats['CSD10']),"cs")
-        gd10 = eval_at_10(float(matches['golddiffat10']),float(champion_stats['GD10']),"g")
-        wpm = float(matches['wpm'])/float(champion_stats['WPM'])
-        wcpm = float(matches['wcpm'])/float(champion_stats['WCPM'])
-        return ((kda+kp+cspm+dpm+damageshare+xd10+cd10+gd10+wpm+wcpm)/10)
-    except:
-        #no data available, provide default guess of 1
-        return 1
+    #try:
+    matches = matches[matches['player'] == player]
+    matches = matches[matches['champion'] == champion]
+    champion_stats = champion_stats[champion_stats['Champion'] == champion]
+    matches['deaths'] = matches['deaths'].replace(0,1)
+    matches['kda'] = (matches['kills']+matches['assists'])/matches['deaths']
+    matches['kp'] = matches['kills']/matches['teamkills']
+    matches = matches[['kda','kp','cspm', 'dpm', 'damageshare', 'xpdiffat10', 'csdiffat10', 'golddiffat10', 'wpm', 'wcpm']].mean(axis=0)  
+    print(champion_stats['XPD10'])
+    champion_stats = champion_stats.applymap(lambda x: percent_to_int(x))
+    #arbitrary computation
+    
+    
+    # fix these
+    kda = float(matches['kda'])/float(champion_stats['KDA'])
+    kp = float(matches['kp'])/float(champion_stats['KP'])
+    cspm = float(matches['cspm'])/float(champion_stats['CSPM'])
+    dpm = float(matches['dpm'])/float(champion_stats['DPM'])
+    damageshare =float(matches['damageshare'])/float(champion_stats['DMG%'])
+    xd10 = float(matches['xpdiffat10'])/float(champion_stats['XPD10'])
+    cd10 = float(matches['csdiffat10'])/float(champion_stats['CSD10'])
+    gd10 = float(matches['golddiffat10'])/float(champion_stats['GD10'])
+    wpm = float(matches['wpm'])/float(champion_stats['WPM'])
+    wcpm = float(matches['wcpm'])/float(champion_stats['WCPM'])
+    print(kda,kp,cspm,dpm,damageshare,xd10,cd10,gd10,wpm,wcpm)
+    return ((kda+kp+cspm+dpm+damageshare+xd10+cd10+gd10+wpm+wcpm)/10)
+    # except:
+        # return "default"
 
 def sb_plot(plot):
     fig = plt.figure(figsize=(16, 16))
@@ -175,8 +141,7 @@ def main():
     lpl = filter_null(pd.read_csv('LPL.csv'))
     match = pd.read_csv('2019.csv')
 
-    print(performance_on_champ(lcs, match, 'Bjergsen','Syndra'))
-       
+    print(performance_on_champ(lcs, match, 'Zven','Ezreal'))
     #champion ranking
     # df = champion_score(lcs)
     # print('lcs\n')
@@ -190,6 +155,41 @@ def main():
     # df = champion_score(lpl)
     # print('lpl\n')
     # print(df[['Champion','score','GP','W%']].sort_values(by=['score'], ascending=False))
+    
+    #feature correlation specific team 
+    # lcs_matches = match[match['league'] == 'LCS']
+    # tsm = lcs_matches[lcs_matches['team']=='Team SoloMid']
+    # tsm_player_stats = tsm[tsm['player'].str.len() > -1]
+    #subtract dataframe:https://stackoverflow.com/questions/23284409/how-to-subtract-rows-of-one-pandas-data-frame-from-another
+    # new = tsm.merge(tsm_player_stats,how='left',indicator=True)
+    # new = new[(new['_merge']=='left_only')]
+    # tsm_matches = new.drop(columns='_merge')
+    
+    #seperate data by side
+    # tsm_matches_red = tsm_matches[tsm_matches['side'] == 'Blue'][team_feature_list]
+    # tsm_matches_blue = tsm_matches[tsm_matches['side'] == 'Red'][team_feature_list]
+    
+    #scale dataframes
+    # scaler = MinMaxScaler()
+    # tsm_matches_red = pd.DataFrame(scaler.fit_transform(tsm_matches_red), columns=tsm_matches_red.columns)
+    # tsm_matches_blue = pd.DataFrame(scaler.fit_transform(tsm_matches_blue), columns=tsm_matches_blue.columns)
+    
+    # pearsoncorr = tsm_matches_red.corr(method='pearson')
+    # plt.figure(figsize=(16, 16))
+    # sb.heatmap(pearsoncorr, 
+            # xticklabels=pearsoncorr.columns,
+            # yticklabels=pearsoncorr.columns,
+            # cmap='RdBu_r',
+            # annot=True,)
+    # plt.savefig("tsm_red.png")
+    # pearsoncorr = tsm_matches_blue.corr(method='pearson')
+    # plt.figure(figsize=(16, 16))
+    # sb.heatmap(pearsoncorr, 
+            # xticklabels=pearsoncorr.columns,
+            # yticklabels=pearsoncorr.columns,
+            # cmap='RdBu_r',
+            # annot=True,)
+    # plt.savefig("tsm_blue.png")
     
     # lcs_correlation_red,  lcs_correlation_blue = feature_correlation_region(match, 'LCS', team_feature_list)
     
@@ -220,5 +220,11 @@ def main():
     # blue.savefig("lck_blue.png")
     #bans
     
+    #gamelength, result, first dragon, dragons, first heralds, heralds, first barons, firsttower
+    #firsttothreetowers, firstmidtower, damagetochamp, wardsplaced, wardskilled, controlwardsbought
+    #visionscore, csdiffat10, golddiffat10, csat10,goldat10, csdiffat15, xpdiffat15, golddiffat15
+    
+
+
 if __name__=='__main__':
     main()
