@@ -75,18 +75,22 @@ def dominantGlobal(lck, lec, lcs, lpl):
 def globalBest(df):
     df = df.sort_values(by=["rank"]).reset_index()
     df["rank"] = df.index + 1
+    df = df.drop(["index"], axis=1)
 
     print("Top 5 most dominant players in the 4 regions:")
     print(df.head()) 
     print("\n")
+    df.head().to_csv("global_best.csv", index=False)
 
 def globalRole(df):
     df = df.sort_values(by=["rank"]).reset_index()
     df = df.drop_duplicates(subset="Pos")
     df["rank"] = df.index + 1
+    df = df.drop(["index"], axis=1)
     print("Most dominant player in the 4 regions for each position:")
     print(df) 
     print("\n")
+    df.to_csv("global_role.csv", index=False)
 
 
 def dominantRegion(df, league):
@@ -119,20 +123,26 @@ def dominantRegion(df, league):
     regionRole(res, league)
 
 def regionBest(df, league):
+    output = league + "_best.csv"
     df = df.sort_values(by=["rank"]).reset_index()
     df["rank"] = df.index + 1
+    df = df.drop(["index"], axis=1)
 
     print("Top 5 most dominant players in {}:".format(league))
     print(df.head()) 
     print("\n")
+    df.head().to_csv(output, index=False)
 
 def regionRole(df, league):
+    output = league + "_role.csv"
     df = df.sort_values(by=["rank"]).reset_index()
     df = df.drop_duplicates(subset="Pos")
     df["rank"] = df.index + 1
+    df = df.drop(["index"], axis=1)
     print("Most dominant player in {} for each position:".format(league))
     print(df) 
     print("\n")
+    df.to_csv(output, index=False)
     
 
 def main():
@@ -146,10 +156,10 @@ def main():
     # 2.b) Most dominant player globally 
 
 
-    lck = filter_players(pd.read_csv('lck_player.csv'))
-    lec = filter_players(pd.read_csv('lec_player.csv'))
-    lcs = filter_players(pd.read_csv('lcs_player.csv'))
-    lpl = filter_players(pd.read_csv('lpl_player.csv'))
+    lck = filter_players(pd.read_csv('lck_player_data.csv'))
+    lec = filter_players(pd.read_csv('lec_player_data.csv'))
+    lcs = filter_players(pd.read_csv('lcs_player_data.csv'))
+    lpl = filter_players(pd.read_csv('lpl_player_data.csv'))
 
     lck = format_df(lck)
     lec = format_df(lec)
