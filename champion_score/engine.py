@@ -46,13 +46,12 @@ def collect_team_dict(matches, region):
     return team_dict
     
 #Add correlation values to dictionary
-def add_correlation(team_dict, match, region, team_feature_list, player_feature_list):
+def add_correlation_dict(team_dict, match, region, team_feature_list, player_feature_list):
     temp_dict={}
     for team in team_dict:
         for position in team_dict[team]:
-            correlation_red, correlation_blue = feature_correlation_player(match, team, position, player_feature_list)           
-            temp_dict.update({position+"_correlation_red":correlation_red})
-            temp_dict.update({position+"_correlation_blue":correlation_blue}) 
+            correlation = feature_correlation_player(match, team, position, player_feature_list)           
+            temp_dict.update({position+"_correlation":correlation})
         team_dict[team].update(temp_dict)
         temp_dict = {}
     for team in team_dict:
@@ -60,7 +59,12 @@ def add_correlation(team_dict, match, region, team_feature_list, player_feature_
         team_dict[team].update({"correlation_red":correlation_red})
         team_dict[team].update({"correlation_blue":correlation_blue})
     return team_dict
-    
+ 
+#calculate correlation difference
+def diff_cor(cor, avg_cor):
+    cor = abs(cor) - abs(avg_cor)
+    return cor
+ 
 #Games/winrate bias
 def gp_adjust(t, g, w):
     if float(w.replace('%','')) - 50 > 0:
@@ -103,7 +107,18 @@ def eval_at_10(x,y,type_stat):
                 return (1 + (x-y)/300)
             else:
                 return 0 
-                
+ 
+#add kp and kda column
+def kda(kills, assists, deaths):
+    if deaths == 0:
+        deaths = 1
+    return (kills+assists)/deaths
+
+def pre_process(match):
+    match['kp'] = match['kills']/match['teamkills']
+    match['kda'] = match.apply(lambda x: kda(x['kills'], x['assists'], x['deaths']), axis = 1)
+    return match
+ 
 #score champion by region currently only games-winrate adjusted
 def champion_score(region):
     total = math.floor((int(region['GP'].iloc[0])/float((region['P%'].iloc[0]).replace('%',''))*100))
@@ -153,6 +168,43 @@ def feature_correlation_player(matches, team, position, feature_list):
     matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
     return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')  
 
+def feature_correlation_player(matches, team, position, feature_list):
+    matches = matches[matches['team'] == team]
+    matches = matches[matches['position'] == position][feature_list]
+    #seperate red and blue
+    scaler = MinMaxScaler()
+    matches = pd.DataFrame(scaler.fit_transform(matches), columns=matches.columns)
+    return matches.corr(method='pearson')
+    
+def feature_correlation_player_region(matches, region, position, feature_list):
+    matches = matches[matches['league'] == region]
+    matches = matches[matches['position'] == position][feature_list]
+    #seperate red and blue
+    scaler = MinMaxScaler()
+    matches = pd.DataFrame(scaler.fit_transform(matches), columns=matches.columns)
+    return matches.corr(method='pearson')
+
+# def feature_correlation_player(matches, team, position, feature_list):
+    # matches = matches[matches['team'] == team]
+    # matches = matches[matches['position'] == position][feature_list]
+    # #seperate red and blue
+    # matches_red = (matches[matches['side'] == 'Blue']).drop(['side'], axis =1)
+    # matches_blue = (matches[matches['side'] == 'Red']).drop(['side'], axis=1)
+    # scaler = MinMaxScaler()
+    # matches_red = pd.DataFrame(scaler.fit_transform(matches_red), columns=matches_red.columns)
+    # matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
+    # return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson') 
+    
+# def feature_correlation_player_region(matches, region, position, feature_list):
+    # matches = matches[matches['league'] == region]
+    # matches = matches[matches['position'] == position][feature_list]
+    # #seperate red and blue
+    # matches_red = (matches[matches['side'] == 'Blue']).drop(['side'], axis =1)
+    # matches_blue = (matches[matches['side'] == 'Red']).drop(['side'], axis=1)
+    # scaler = MinMaxScaler()
+    # matches_red = pd.DataFrame(scaler.fit_transform(matches_red), columns=matches_red.columns)
+    # matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
+    # return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')     
 #naive champion performance evaluation for a player
 def performance_on_champ(champion_stats, matches, team, position, champion):
     try:
