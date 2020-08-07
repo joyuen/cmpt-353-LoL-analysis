@@ -67,8 +67,8 @@ def dominantGlobal(lck, lec, lcs, lpl):
     completeData = fix_stats(completeData)
     completeData = completeData.groupby(["Player", "Pos"], as_index=False).sum() 
     
-    completeData["rank"] = completeData["goldrank"] * 0.3 + completeData["xprank"] * 0.3 + completeData["csrank"] * 0.3 + completeData["wrrank"] * 0.05 + completeData["kdarank"] * 0.05   
-
+    completeData["rank"] = completeData["goldrank"] * 0.25 + completeData["xprank"] * 0.25 + completeData["csrank"] * 0.25 + completeData["wrrank"] * 0.125 + completeData["kdarank"] * 0.125   
+   
     globalBest(completeData)
     globalRole(completeData)
 
@@ -117,7 +117,7 @@ def dominantRegion(df, league):
     res = fix_stats(res)
     res = res.groupby(["Player", "Pos"], as_index=False).sum() 
 
-    res["rank"] = res["goldrank"] * 0.3 + res["xprank"] * 0.3 + res["csrank"] * 0.3 + res["wrrank"] * 0.05 + res["kdarank"] * 0.05   
+    res["rank"] = res["goldrank"] * 0.25 + res["xprank"] * 0.25 + res["csrank"] * 0.25 + res["wrrank"] * 0.125 + res["kdarank"] * 0.125   
 
     regionBest(res, league)
     regionRole(res, league)
@@ -145,15 +145,55 @@ def regionRole(df, league):
     df.to_csv(output, index=False)
     
 
+def score_player(df, pos):
+    df = df[df["Pos"] == pos]
+
+    gold = df.sort_values(by=["GD10", "GP"], ascending=False).reset_index(drop=True)
+    xp = df.sort_values(by=["XPD10", "GP"], ascending=False).reset_index(drop=True)
+    cs = df.sort_values(by=["CSD10", "GP"], ascending=False).reset_index(drop=True)
+    winrate = df.sort_values(by=["W%", "GP"], ascending=False).reset_index(drop=True)
+    kda = df.sort_values(by=["KDA", "GP"], ascending=False).reset_index(drop=True)
+
+    gold["rank"] = gold.index + 1
+    xp["rank"] = xp.index + 1
+    cs["rank"] = cs.index + 1
+    winrate["rank"] = winrate.index + 1
+    kda["rank"] = kda.index + 1
+
+    gold["goldrank"] = gold["rank"]  
+    xp["xprank"] = xp["rank"] 
+    cs["csrank"] = cs["rank"] 
+    winrate["wrrank"] = winrate["rank"] 
+    kda["kdarank"] = kda["rank"]
+
+    frames = [gold, xp, cs, winrate, kda]
+    res = pd.concat(frames)
+    res = fix_stats(res)
+    res = res.groupby(["Player", "Pos"], as_index=False).sum() 
+
+    res["rank"] = res["goldrank"] * 0.25 + res["xprank"] * 0.25 + res["csrank"] * 0.25 + res["wrrank"] * 0.125 + res["kdarank"] * 0.125   
+    
+    res = res.sort_values(by=["rank"]).reset_index()
+    res["rank"] = res.index + 1
+    res = res.drop(["index"], axis=1)
+
+    new_df = res[["Player", "rank"]]
+
+    output = new_df.set_index("Player").T.to_dict("records")
+    return output
+
+
 def main():
     # Questions:
     # Dominance (GD10, XPD10, CSD10, W%, KDA)
     # Find where each player ranks in each category then use weighted average to determine overall rank
     # Weighted average favours in lane superiority over total winrate and KDA
+    # 75% in lane statistics (GD10, XPD10, CSD10) and 25% team oriented statistics (W% and KDA)
     # 1.a) Most dominant player in each role
     # 1.b) Most dominant player in region
     # 2.a) Most dominant player in each role globally
     # 2.b) Most dominant player globally 
+    # 3) Score players based on region and position
 
 
     lck = filter_players(pd.read_csv('lck_player_data.csv'))
@@ -169,9 +209,12 @@ def main():
     dominantRegion(lck, "LCK")
     dominantRegion(lec, "LEC")
     dominantRegion(lcs, "LCS")
-    dominantRegion(lpl, "LPL")
-
+    dominantRegion(lpl, "LPL"
     dominantGlobal(lck, lec, lcs, lpl)
+
+
+    # Top, Jungle, Middle, ADC, Support
+    score_player(lcs, "Support")
     
 if __name__ == '__main__':
     main()
