@@ -14,7 +14,6 @@ def pre_process(match):
     match['kda'] = match.apply(lambda x: kda(x['kills'], x['assists'], x['deaths']), axis = 1)
     return match
 
-#Helper function
 def filter_null(df):
     df = df[~df['W%'].str.contains('-')]
     return df
@@ -51,7 +50,7 @@ def collect_team_dict(matches, region):
     return team_dict
    
     
-#Correlate:Pearson  
+#Correlate by description:Pearson  
 def feature_correlation_region(matches, region, feature_list):
     matches = matches[matches['league'] == region]
     matches_player = matches[matches['player'].str.len() > -1]
@@ -87,17 +86,6 @@ def feature_correlation_player(matches, team, position, feature_list):
     matches = matches[matches['team'] == team]
     matches = matches[matches['position'] == position][feature_list]
     #seperate red and blue
-    matches_red = (matches[matches['side'] == 'Blue']).drop(['side'], axis =1)
-    matches_blue = (matches[matches['side'] == 'Red']).drop(['side'], axis=1)
-    scaler = MinMaxScaler()
-    matches_red = pd.DataFrame(scaler.fit_transform(matches_red), columns=matches_red.columns)
-    matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
-    return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')  
-
-def feature_correlation_player(matches, team, position, feature_list):
-    matches = matches[matches['team'] == team]
-    matches = matches[matches['position'] == position][feature_list]
-    #seperate red and blue
     scaler = MinMaxScaler()
     matches = pd.DataFrame(scaler.fit_transform(matches), columns=matches.columns)
     return matches.corr(method='pearson')
@@ -110,7 +98,7 @@ def feature_correlation_player_region(matches, region, position, feature_list):
     matches = pd.DataFrame(scaler.fit_transform(matches), columns=matches.columns)
     return matches.corr(method='pearson')
 
-#feature correlation for player with sides
+#feature correlation for player with sides(not useful with small sample size)
 # def feature_correlation_player(matches, team, position, feature_list):
     # matches = matches[matches['team'] == team]
     # matches = matches[matches['position'] == position][feature_list]
@@ -133,7 +121,7 @@ def feature_correlation_player_region(matches, region, position, feature_list):
     # matches_blue = pd.DataFrame(scaler.fit_transform(matches_blue), columns=matches_blue.columns)
     # return matches_red.corr(method='pearson'), matches_blue.corr(method='pearson')    
     
-#calculate correlation difference
+#calculate correlation difference, used to distinguish factors from average
 def diff_cor(cor, avg_cor):
     cor = abs(cor) - abs(avg_cor)
     return cor
@@ -170,13 +158,13 @@ def add_correlation_dict(team_dict, match, region, team_feature_list, player_fea
         team_dict[team].update({"correlation_blue":correlation_blue})
     return team_dict
  
-#add kp and kda column
+#add kp and kda column to player data
 def kda(kills, assists, deaths):
     if deaths == 0:
         deaths = 1
     return (kills+assists)/deaths
 
-#helper
+#helper for champion score
 def gp_adjust( g, w, p):
     return ((w * int(g)) + p*10)/3
     
@@ -185,7 +173,7 @@ def champion_score(region):
     region['score'] = region.apply(lambda x : gp_adjust(x['GP'], x['W%'], x['P+B%']), axis = 1)
     return region
 
-#Evaluate at 10 stats for performance on champion
+#Evaluate at 10 stats for performance on champion, defaults to stabilize variance
 def eval_at_10(x,y,type_stat):
     if (x > y) or (x==y):
         if type_stat == "cs":
@@ -248,7 +236,7 @@ def performance_on_champ(champion_stats, matches, team, position, champion):
         wcpm = float(matches['wcpm'])/float(champion_stats['WCPM'])
         return ((kda+kp+cspm+dpm+damageshare+xd10+cd10+gd10+wpm+wcpm)/10)
     except:
-        #no data available, provide default guess o
+        #data is faulty(not all champions played are in the champion data given)
         return 0.8
 
 
@@ -284,7 +272,6 @@ def champ_compat(position, player_cor, champ_data, team, matches):
     if position == "sup":
         position_champ = "Support"
     player_cor = player_cor['result'][1:] 
-    #champ_data = champ_data[champ_data['Pos']== position_champ]
     champ_score = (champ_score[champ_score['Pos']== position_champ])[['Champion', 'score']]
     #malformed and unmatching names requiring manual assignment
     compat_dict["K"] = compat_dict["K"] + player_cor['kills']
@@ -326,7 +313,7 @@ def champ_compat(position, player_cor, champ_data, team, matches):
     champ_data['score_adjusted'] = champ_data['score_adjusted'].clip(lower=10)
     return (champ_data.sort_values(by='score_adjusted', ascending = False))
 
-#easier use of function 
+#easier use of function as champ compat uses a lot of data that requires processing
 def get_score_adjusted(match, region, champ_data,team, position, player_feature_list):
     return champ_compat(position, diff_cor( feature_correlation_player(match, team, position, player_feature_list), feature_correlation_player_region(match, region, position, player_feature_list)), champ_data, team, match)
  
@@ -361,7 +348,7 @@ def get_matches(matches, region):
     return condensed_matches          
 
 
-#assemble data for evaluation 
+#assemble data for evaluation against team dict 
 def evaluate(matches, team_dict, metric):
     team_score = []
     top_score = []
@@ -405,7 +392,7 @@ def evaluate(matches, team_dict, metric):
     # print(arith_eval(sup_score,"sup"))
     return arith_eval(team_score,"team"), arith_eval(top_score,"top"), arith_eval(jng_score,"jng"), arith_eval(mid_score,"mid"), arith_eval(bot_score,"bot"), arith_eval(sup_score,"sup")
 
-#perform arthimitec on assembled data   
+#perform arthimitec on assembled data for easier score visualization
 def arith_eval(arr,pos):
     score = 0
     x = 0
@@ -418,7 +405,7 @@ def arith_eval(arr,pos):
                 score+=1
     return (pos + " score :" + str(score) +"/"+str(x) +"\n")
 
-#aggregate two champion datafiles into one
+#aggregate two champion datafiles into one, champion data files were sectioned by different time frames than yearly match data so they needed to be combined to match better
 def aggregate(df1, df2): 
    df1 = df1.applymap(lambda x: percent_to_int(x))
    df2 = df2.applymap(lambda x: percent_to_int(x))
@@ -452,7 +439,7 @@ def aggregate_help(x, df):
             x[str(column)] = round((df[str(column)].apply(pd.to_numeric).sum())/(gp),3)
     return x
 
-#make list from get matches
+#make list from get matches(used to create a csv for ml section)
 def make_list_help(matches, side,pos): 
     res = []
     for each in matches:
@@ -491,9 +478,11 @@ def make_data_help(champ, team, team_dict, metric,ind):
             return 15
         else:
             return 0.8
+
 def team_score(x, side):
     return (x[side+'_top'] + x[side+'_jng'] + x[side+'_mid'] + x[side+'_bot'] + x[side+'_sup'])
 
+#make the data ready for conversion to csv
 def make_data(train_list, team_dict,metric): 
     df = pd.DataFrame()
     df['result'] = train_list['result']
@@ -510,14 +499,22 @@ def make_data(train_list, team_dict,metric):
     df['red_team'] = df.apply(lambda x:team_score(x, "red"), axis=1)
     df['blue_team'] = df.apply(lambda x:team_score(x, "blue"), axis=1)
     return df
-   
-#function from player_comparison
+ 
+def make_data_team(train_list): 
+    df = pd.DataFrame()
+    df['result'] = train_list['result']
+    df['red_team'] = train_list['red_team']
+    df['blue_team'] = train_list['blue_team']
+    return df
+ 
+#function from player_comparison folder
 def percent_to_float(x):
     return float(x.strip("%"))/100
 
 def format_df(df):
     df["W%"] = df["W%"].apply(lambda x: percent_to_float(x))
     return df
+
 def filter_players(df):
     df = df[df["GP"] >= 10] # minimum of 10 professional games to be considered
     return df

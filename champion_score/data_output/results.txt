@@ -1,0 +1,156 @@
+lck
+score_adjustedteam score :205/309
+
+top score :200/309
+
+jng score :186/309
+
+mid score :196/309
+
+bot score :174/309
+
+sup score :186/309
+
+score
+team score :173/309
+
+top score :164/309
+
+jng score :174/309
+
+mid score :169/309
+
+bot score :153/309
+
+sup score :160/309
+
+compatibility
+team score :176/309
+
+top score :186/309
+
+jng score :140/309
+
+mid score :171/309
+
+bot score :143/309
+
+sup score :170/309
+
+performance
+team score :233/309
+
+top score :191/309
+
+jng score :193/309
+
+mid score :224/309
+
+bot score :187/309
+
+sup score :190/309
+
+lcs
+score_adjustedteam score :137/211
+
+top score :122/211
+
+jng score :118/211
+
+mid score :130/211
+
+bot score :121/211
+
+sup score :115/211
+
+score
+team score :110/211
+
+top score :122/211
+
+jng score :103/211
+
+mid score :112/211
+
+bot score :111/211
+
+sup score :104/211
+
+compatibility
+team score :117/211
+
+top score :109/211
+
+jng score :127/211
+
+mid score :114/211
+
+bot score :90/211
+
+sup score :111/211
+
+performance
+team score :143/211
+
+top score :125/211
+
+jng score :116/211
+
+mid score :134/211
+
+bot score :135/211
+
+sup score :129/211
+
+lec
+score_adjustedteam score :146/215
+
+top score :138/215
+
+jng score :130/215
+
+mid score :136/215
+
+bot score :124/215
+
+sup score :126/215
+
+score
+team score :114/215
+
+top score :116/215
+
+jng score :101/215
+
+mid score :118/215
+
+bot score :104/215
+
+sup score :122/215
+
+compatibility
+team score :108/215
+
+top score :116/215
+
+jng score :104/215
+
+mid score :102/215
+
+bot score :106/215
+
+sup score :105/215
+
+performance
+team score :172/215
+
+top score :141/215
+
+jng score :134/215
+
+mid score :135/215
+
+bot score :144/215
+
+sup score :139/215
+

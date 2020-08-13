@@ -1,0 +1,484 @@
+result,red_team,blue_team
+0,Jin Air Green Wings,SK Telecom T1
+1,SK Telecom T1,Jin Air Green Wings
+0,Gen.G,DAMWON Gaming
+1,DAMWON Gaming,Gen.G
+0,Hanwha Life Esports,KT Rolster
+0,KT Rolster,Hanwha Life Esports
+1,Hanwha Life Esports,KT Rolster
+1,Griffin,Kingzone DragonX
+0,Kingzone DragonX,Griffin
+1,SANDBOX Gaming,Gen.G
+0,Gen.G,SANDBOX Gaming
+1,SK Telecom T1,Afreeca Freecs
+0,Afreeca Freecs,SK Telecom T1
+0,KT Rolster,DAMWON Gaming
+1,DAMWON Gaming,KT Rolster
+0,Jin Air Green Wings,Griffin
+1,Griffin,Jin Air Green Wings
+1,SANDBOX Gaming,Kingzone DragonX
+0,Kingzone DragonX,SANDBOX Gaming
+1,Hanwha Life Esports,Afreeca Freecs
+0,Afreeca Freecs,Hanwha Life Esports
+1,Kingzone DragonX,KT Rolster
+0,KT Rolster,Kingzone DragonX
+1,Griffin,Hanwha Life Esports
+0,Hanwha Life Esports,Griffin
+1,SK Telecom T1,SANDBOX Gaming
+1,SANDBOX Gaming,SK Telecom T1
+0,SK Telecom T1,SANDBOX Gaming
+1,Afreeca Freecs,Gen.G
+1,Gen.G,Afreeca Freecs
+1,Afreeca Freecs,Gen.G
+0,Jin Air Green Wings,KT Rolster
+1,KT Rolster,Jin Air Green Wings
+1,Griffin,DAMWON Gaming
+0,DAMWON Gaming,Griffin
+0,Afreeca Freecs,Kingzone DragonX
+1,Kingzone DragonX,Afreeca Freecs
+0,Hanwha Life Esports,SANDBOX Gaming
+1,SANDBOX Gaming,Hanwha Life Esports
+0,DAMWON Gaming,SK Telecom T1
+0,SK Telecom T1,DAMWON Gaming
+0,DAMWON Gaming,SK Telecom T1
+1,Gen.G,Jin Air Green Wings
+1,Jin Air Green Wings,Gen.G
+1,Gen.G,Jin Air Green Wings
+1,SANDBOX Gaming,DAMWON Gaming
+1,DAMWON Gaming,SANDBOX Gaming
+1,SANDBOX Gaming,DAMWON Gaming
+0,Jin Air Green Wings,Afreeca Freecs
+1,Afreeca Freecs,Jin Air Green Wings
+0,SK Telecom T1,Griffin
+1,Griffin,SK Telecom T1
+1,KT Rolster,Gen.G
+1,Gen.G,KT Rolster
+0,KT Rolster,Gen.G
+0,DAMWON Gaming,Kingzone DragonX
+1,Kingzone DragonX,DAMWON Gaming
+1,Hanwha Life Esports,Jin Air Green Wings
+0,Jin Air Green Wings,Hanwha Life Esports
+1,KT Rolster,Afreeca Freecs
+0,Afreeca Freecs,KT Rolster
+0,SANDBOX Gaming,Griffin
+0,Griffin,SANDBOX Gaming
+0,SANDBOX Gaming,Griffin
+0,Gen.G,Kingzone DragonX
+0,Kingzone DragonX,Gen.G
+0,Gen.G,Kingzone DragonX
+0,Hanwha Life Esports,SK Telecom T1
+1,SK Telecom T1,Hanwha Life Esports
+0,Gen.G,Hanwha Life Esports
+1,Hanwha Life Esports,Gen.G
+1,Kingzone DragonX,SK Telecom T1
+1,SK Telecom T1,Kingzone DragonX
+0,Kingzone DragonX,SK Telecom T1
+0,Afreeca Freecs,DAMWON Gaming
+1,DAMWON Gaming,Afreeca Freecs
+0,Jin Air Green Wings,SANDBOX Gaming
+1,SANDBOX Gaming,Jin Air Green Wings
+0,KT Rolster,Griffin
+1,Griffin,KT Rolster
+0,Kingzone DragonX,Hanwha Life Esports
+1,Hanwha Life Esports,Kingzone DragonX
+0,SK Telecom T1,Gen.G
+0,Gen.G,SK Telecom T1
+1,SK Telecom T1,Gen.G
+1,DAMWON Gaming,Jin Air Green Wings
+0,Jin Air Green Wings,DAMWON Gaming
+0,Afreeca Freecs,Griffin
+1,Griffin,Afreeca Freecs
+0,KT Rolster,SANDBOX Gaming
+0,SANDBOX Gaming,KT Rolster
+0,KT Rolster,SANDBOX Gaming
+1,Griffin,Gen.G
+0,Gen.G,Griffin
+1,SK Telecom T1,KT Rolster
+0,KT Rolster,SK Telecom T1
+1,Kingzone DragonX,Jin Air Green Wings
+0,Jin Air Green Wings,Kingzone DragonX
+1,SANDBOX Gaming,Afreeca Freecs
+1,Afreeca Freecs,SANDBOX Gaming
+0,SANDBOX Gaming,Afreeca Freecs
+1,DAMWON Gaming,Hanwha Life Esports
+0,Hanwha Life Esports,DAMWON Gaming
+1,Griffin,KT Rolster
+0,KT Rolster,Griffin
+1,Kingzone DragonX,SANDBOX Gaming
+0,SANDBOX Gaming,Kingzone DragonX
+0,Jin Air Green Wings,Gen.G
+1,Gen.G,Jin Air Green Wings
+1,SK Telecom T1,DAMWON Gaming
+1,DAMWON Gaming,SK Telecom T1
+0,SK Telecom T1,DAMWON Gaming
+1,Afreeca Freecs,Hanwha Life Esports
+1,Hanwha Life Esports,Afreeca Freecs
+0,Afreeca Freecs,Hanwha Life Esports
+0,Afreeca Freecs,SANDBOX Gaming
+1,SANDBOX Gaming,Afreeca Freecs
+0,Jin Air Green Wings,DAMWON Gaming
+1,DAMWON Gaming,Jin Air Green Wings
+0,Hanwha Life Esports,Kingzone DragonX
+1,Kingzone DragonX,Hanwha Life Esports
+0,Gen.G,SK Telecom T1
+1,SK Telecom T1,Gen.G
+0,DAMWON Gaming,Afreeca Freecs
+0,Afreeca Freecs,DAMWON Gaming
+1,DAMWON Gaming,Afreeca Freecs
+1,SANDBOX Gaming,Jin Air Green Wings
+0,Jin Air Green Wings,SANDBOX Gaming
+0,Hanwha Life Esports,Gen.G
+0,Gen.G,Hanwha Life Esports
+1,Hanwha Life Esports,Gen.G
+1,SK Telecom T1,Kingzone DragonX
+0,Kingzone DragonX,SK Telecom T1
+0,DAMWON Gaming,SANDBOX Gaming
+0,SANDBOX Gaming,DAMWON Gaming
+0,DAMWON Gaming,SANDBOX Gaming
+0,Afreeca Freecs,Jin Air Green Wings
+0,Jin Air Green Wings,Afreeca Freecs
+0,Afreeca Freecs,Jin Air Green Wings
+0,Griffin,SK Telecom T1
+0,SK Telecom T1,Griffin
+1,Griffin,SK Telecom T1
+1,Gen.G,KT Rolster
+1,KT Rolster,Gen.G
+0,Gen.G,KT Rolster
+0,Jin Air Green Wings,Hanwha Life Esports
+1,Hanwha Life Esports,Jin Air Green Wings
+1,Kingzone DragonX,DAMWON Gaming
+0,DAMWON Gaming,Kingzone DragonX
+1,Afreeca Freecs,KT Rolster
+0,KT Rolster,Afreeca Freecs
+1,Griffin,SANDBOX Gaming
+0,SANDBOX Gaming,Griffin
+1,Gen.G,Griffin
+0,Griffin,Gen.G
+1,KT Rolster,SK Telecom T1
+1,SK Telecom T1,KT Rolster
+0,KT Rolster,SK Telecom T1
+0,Jin Air Green Wings,Kingzone DragonX
+1,Kingzone DragonX,Jin Air Green Wings
+0,Hanwha Life Esports,DAMWON Gaming
+0,DAMWON Gaming,Hanwha Life Esports
+0,Hanwha Life Esports,DAMWON Gaming
+0,Griffin,Afreeca Freecs
+0,Afreeca Freecs,Griffin
+0,Griffin,Afreeca Freecs
+1,SANDBOX Gaming,KT Rolster
+1,KT Rolster,SANDBOX Gaming
+1,SANDBOX Gaming,KT Rolster
+0,SK Telecom T1,Hanwha Life Esports
+0,Hanwha Life Esports,SK Telecom T1
+1,SK Telecom T1,Hanwha Life Esports
+1,Kingzone DragonX,Gen.G
+0,Gen.G,Kingzone DragonX
+0,Hanwha Life Esports,Griffin
+1,Griffin,Hanwha Life Esports
+0,KT Rolster,Kingzone DragonX
+1,Kingzone DragonX,KT Rolster
+1,Gen.G,Afreeca Freecs
+0,Afreeca Freecs,Gen.G
+0,SANDBOX Gaming,SK Telecom T1
+1,SK Telecom T1,SANDBOX Gaming
+1,KT Rolster,Jin Air Green Wings
+0,Jin Air Green Wings,KT Rolster
+0,DAMWON Gaming,Griffin
+1,Griffin,DAMWON Gaming
+1,SANDBOX Gaming,Hanwha Life Esports
+0,Hanwha Life Esports,SANDBOX Gaming
+0,Kingzone DragonX,Afreeca Freecs
+0,Afreeca Freecs,Kingzone DragonX
+1,Kingzone DragonX,Afreeca Freecs
+1,SK Telecom T1,Jin Air Green Wings
+0,Jin Air Green Wings,SK Telecom T1
+1,DAMWON Gaming,Gen.G
+0,Gen.G,DAMWON Gaming
+0,KT Rolster,Hanwha Life Esports
+1,Hanwha Life Esports,KT Rolster
+1,Kingzone DragonX,Griffin
+0,Griffin,Kingzone DragonX
+0,Gen.G,SANDBOX Gaming
+0,SANDBOX Gaming,Gen.G
+0,Gen.G,SANDBOX Gaming
+0,Afreeca Freecs,SK Telecom T1
+1,SK Telecom T1,Afreeca Freecs
+1,Griffin,Jin Air Green Wings
+0,Jin Air Green Wings,Griffin
+1,DAMWON Gaming,KT Rolster
+0,KT Rolster,DAMWON Gaming
+1,DAMWON Gaming,SANDBOX Gaming
+1,SANDBOX Gaming,DAMWON Gaming
+1,DAMWON Gaming,SANDBOX Gaming
+0,DAMWON Gaming,Kingzone DragonX
+1,Kingzone DragonX,DAMWON Gaming
+0,DAMWON Gaming,Kingzone DragonX
+0,Kingzone DragonX,SK Telecom T1
+1,SK Telecom T1,Kingzone DragonX
+0,Kingzone DragonX,SK Telecom T1
+1,SK Telecom T1,Griffin
+0,Griffin,SK Telecom T1
+1,SK Telecom T1,Griffin
+0,VSG,KT Rolster
+1,KT Rolster,VSG
+0,ES Sharks,Jin Air Green Wings
+1,Jin Air Green Wings,ES Sharks
+1,KT Rolster,Jin Air Green Wings
+0,Jin Air Green Wings,KT Rolster
+1,KT Rolster,Jin Air Green Wings
+1,VSG,ES Sharks
+0,VSG,ES Sharks
+0,VSG,ES Sharks
+0,ES Sharks,VSG
+0,VSG,ES Sharks
+0,ES Sharks,Jin Air Green Wings
+1,Jin Air Green Wings,ES Sharks
+1,ES Sharks,Jin Air Green Wings
+0,ES Sharks,Jin Air Green Wings
+1,KT Rolster,Jin Air Green Wings
+0,Jin Air Green Wings,KT Rolster
+1,DAMWON Gaming,Gen.G
+1,Gen.G,DAMWON Gaming
+0,DAMWON Gaming,Gen.G
+0,Hanwha Life Esports,SANDBOX Gaming
+1,SANDBOX Gaming,Hanwha Life Esports
+0,Afreeca Freecs,Griffin
+0,Griffin,Afreeca Freecs
+0,Afreeca Freecs,Griffin
+0,Jin Air Green Wings,SK Telecom T1
+0,SK Telecom T1,Jin Air Green Wings
+0,Jin Air Green Wings,SK Telecom T1
+0,Gen.G,Kingzone DragonX
+1,Kingzone DragonX,Gen.G
+0,KT Rolster,Hanwha Life Esports
+1,Hanwha Life Esports,KT Rolster
+1,Griffin,DAMWON Gaming
+0,DAMWON Gaming,Griffin
+1,Kingzone DragonX,SANDBOX Gaming
+0,SANDBOX Gaming,Kingzone DragonX
+0,SK Telecom T1,Afreeca Freecs
+0,Afreeca Freecs,SK Telecom T1
+0,SK Telecom T1,Afreeca Freecs
+1,Afreeca Freecs,Hanwha Life Esports
+0,Hanwha Life Esports,Afreeca Freecs
+1,SANDBOX Gaming,Griffin
+1,Griffin,SANDBOX Gaming
+1,SANDBOX Gaming,Griffin
+0,Jin Air Green Wings,Gen.G
+1,Gen.G,Jin Air Green Wings
+0,SK Telecom T1,Kingzone DragonX
+0,Kingzone DragonX,SK Telecom T1
+0,SK Telecom T1,Kingzone DragonX
+0,DAMWON Gaming,KT Rolster
+0,KT Rolster,DAMWON Gaming
+1,DAMWON Gaming,KT Rolster
+0,Hanwha Life Esports,Griffin
+1,Griffin,Hanwha Life Esports
+1,Kingzone DragonX,Afreeca Freecs
+1,Afreeca Freecs,Kingzone DragonX
+0,Kingzone DragonX,Afreeca Freecs
+1,SANDBOX Gaming,SK Telecom T1
+0,SK Telecom T1,SANDBOX Gaming
+0,Gen.G,KT Rolster
+0,KT Rolster,Gen.G
+0,Gen.G,KT Rolster
+0,DAMWON Gaming,Jin Air Green Wings
+0,Jin Air Green Wings,DAMWON Gaming
+1,DAMWON Gaming,Jin Air Green Wings
+1,SK Telecom T1,DAMWON Gaming
+1,DAMWON Gaming,SK Telecom T1
+0,SK Telecom T1,DAMWON Gaming
+0,Jin Air Green Wings,Kingzone DragonX
+1,Kingzone DragonX,Jin Air Green Wings
+0,KT Rolster,Griffin
+1,Griffin,KT Rolster
+0,Hanwha Life Esports,Gen.G
+0,Gen.G,Hanwha Life Esports
+0,Hanwha Life Esports,Gen.G
+0,Afreeca Freecs,SANDBOX Gaming
+0,SANDBOX Gaming,Afreeca Freecs
+0,Afreeca Freecs,SANDBOX Gaming
+1,DAMWON Gaming,Kingzone DragonX
+1,Kingzone DragonX,DAMWON Gaming
+1,DAMWON Gaming,Kingzone DragonX
+1,Griffin,SK Telecom T1
+0,SK Telecom T1,Griffin
+0,Jin Air Green Wings,Hanwha Life Esports
+1,Hanwha Life Esports,Jin Air Green Wings
+1,Gen.G,Afreeca Freecs
+0,Afreeca Freecs,Gen.G
+0,KT Rolster,SANDBOX Gaming
+0,SANDBOX Gaming,KT Rolster
+0,KT Rolster,SANDBOX Gaming
+1,SANDBOX Gaming,Gen.G
+0,Gen.G,SANDBOX Gaming
+1,Griffin,Jin Air Green Wings
+0,Jin Air Green Wings,Griffin
+0,Afreeca Freecs,DAMWON Gaming
+1,DAMWON Gaming,Afreeca Freecs
+0,KT Rolster,SK Telecom T1
+1,SK Telecom T1,KT Rolster
+0,Kingzone DragonX,Hanwha Life Esports
+0,Hanwha Life Esports,Kingzone DragonX
+1,Kingzone DragonX,Hanwha Life Esports
+1,SANDBOX Gaming,Jin Air Green Wings
+0,Jin Air Green Wings,SANDBOX Gaming
+1,SK Telecom T1,Gen.G
+0,Gen.G,SK Telecom T1
+1,Afreeca Freecs,KT Rolster
+0,KT Rolster,Afreeca Freecs
+0,Hanwha Life Esports,DAMWON Gaming
+1,DAMWON Gaming,Hanwha Life Esports
+1,Griffin,Kingzone DragonX
+0,Kingzone DragonX,Griffin
+0,Kingzone DragonX,KT Rolster
+0,KT Rolster,Kingzone DragonX
+1,Kingzone DragonX,KT Rolster
+0,Hanwha Life Esports,SK Telecom T1
+1,SK Telecom T1,Hanwha Life Esports
+1,DAMWON Gaming,SANDBOX Gaming
+0,SANDBOX Gaming,DAMWON Gaming
+0,Jin Air Green Wings,Afreeca Freecs
+1,Afreeca Freecs,Jin Air Green Wings
+1,Gen.G,Griffin
+0,Griffin,Gen.G
+1,SK Telecom T1,KT Rolster
+0,KT Rolster,SK Telecom T1
+0,Jin Air Green Wings,SANDBOX Gaming
+1,SANDBOX Gaming,Jin Air Green Wings
+0,Kingzone DragonX,DAMWON Gaming
+0,DAMWON Gaming,Kingzone DragonX
+1,Kingzone DragonX,DAMWON Gaming
+0,Griffin,Afreeca Freecs
+0,Afreeca Freecs,Griffin
+0,Griffin,Afreeca Freecs
+1,Gen.G,Hanwha Life Esports
+0,Hanwha Life Esports,Gen.G
+1,Gen.G,SANDBOX Gaming
+0,SANDBOX Gaming,Gen.G
+0,Hanwha Life Esports,Kingzone DragonX
+0,Kingzone DragonX,Hanwha Life Esports
+0,Hanwha Life Esports,Kingzone DragonX
+1,SK Telecom T1,Jin Air Green Wings
+0,Jin Air Green Wings,SK Telecom T1
+1,KT Rolster,Afreeca Freecs
+1,Afreeca Freecs,KT Rolster
+1,KT Rolster,Afreeca Freecs
+1,DAMWON Gaming,Griffin
+0,Griffin,DAMWON Gaming
+1,Kingzone DragonX,Gen.G
+1,Gen.G,Kingzone DragonX
+0,Kingzone DragonX,Gen.G
+1,Afreeca Freecs,Jin Air Green Wings
+0,Jin Air Green Wings,Afreeca Freecs
+0,SANDBOX Gaming,Hanwha Life Esports
+0,Hanwha Life Esports,SANDBOX Gaming
+1,SANDBOX Gaming,Hanwha Life Esports
+1,Griffin,KT Rolster
+0,KT Rolster,Griffin
+0,Gen.G,SK Telecom T1
+1,SK Telecom T1,Gen.G
+0,SANDBOX Gaming,DAMWON Gaming
+0,DAMWON Gaming,SANDBOX Gaming
+0,SANDBOX Gaming,DAMWON Gaming
+1,Hanwha Life Esports,Jin Air Green Wings
+0,Jin Air Green Wings,Hanwha Life Esports
+1,Afreeca Freecs,Kingzone DragonX
+1,Kingzone DragonX,Afreeca Freecs
+1,Afreeca Freecs,Kingzone DragonX
+0,KT Rolster,Gen.G
+1,Gen.G,KT Rolster
+1,SK Telecom T1,Griffin
+1,Griffin,SK Telecom T1
+1,SK Telecom T1,Griffin
+0,Jin Air Green Wings,DAMWON Gaming
+1,DAMWON Gaming,Jin Air Green Wings
+0,Kingzone DragonX,SK Telecom T1
+1,SK Telecom T1,Kingzone DragonX
+0,DAMWON Gaming,Afreeca Freecs
+1,Afreeca Freecs,DAMWON Gaming
+0,Hanwha Life Esports,KT Rolster
+1,KT Rolster,Hanwha Life Esports
+1,Griffin,SANDBOX Gaming
+1,SANDBOX Gaming,Griffin
+1,Griffin,SANDBOX Gaming
+0,Gen.G,Jin Air Green Wings
+0,Jin Air Green Wings,Gen.G
+1,Gen.G,Jin Air Green Wings
+0,Afreeca Freecs,SK Telecom T1
+1,SK Telecom T1,Afreeca Freecs
+0,DAMWON Gaming,Hanwha Life Esports
+1,Hanwha Life Esports,DAMWON Gaming
+1,SANDBOX Gaming,Kingzone DragonX
+0,Kingzone DragonX,SANDBOX Gaming
+1,Kingzone DragonX,Jin Air Green Wings
+0,Jin Air Green Wings,Kingzone DragonX
+0,KT Rolster,DAMWON Gaming
+1,DAMWON Gaming,KT Rolster
+0,SANDBOX Gaming,Afreeca Freecs
+0,Afreeca Freecs,SANDBOX Gaming
+1,SANDBOX Gaming,Afreeca Freecs
+1,Griffin,Gen.G
+1,Gen.G,Griffin
+1,Griffin,Gen.G
+0,SK Telecom T1,Hanwha Life Esports
+0,Hanwha Life Esports,SK Telecom T1
+0,SK Telecom T1,Hanwha Life Esports
+0,Jin Air Green Wings,KT Rolster
+0,KT Rolster,Jin Air Green Wings
+0,Jin Air Green Wings,KT Rolster
+0,Kingzone DragonX,Griffin
+1,Griffin,Kingzone DragonX
+0,Afreeca Freecs,Gen.G
+0,Gen.G,Afreeca Freecs
+1,Afreeca Freecs,Gen.G
+1,DAMWON Gaming,SK Telecom T1
+0,SK Telecom T1,DAMWON Gaming
+1,SANDBOX Gaming,KT Rolster
+1,KT Rolster,SANDBOX Gaming
+1,SANDBOX Gaming,KT Rolster
+0,Jin Air Green Wings,Griffin
+1,Griffin,Jin Air Green Wings
+1,Hanwha Life Esports,Afreeca Freecs
+1,Afreeca Freecs,Hanwha Life Esports
+0,Hanwha Life Esports,Afreeca Freecs
+1,KT Rolster,Kingzone DragonX
+1,Kingzone DragonX,KT Rolster
+1,KT Rolster,Kingzone DragonX
+0,SK Telecom T1,SANDBOX Gaming
+0,SANDBOX Gaming,SK Telecom T1
+1,SK Telecom T1,SANDBOX Gaming
+0,Gen.G,DAMWON Gaming
+0,DAMWON Gaming,Gen.G
+0,Gen.G,DAMWON Gaming
+1,Griffin,Hanwha Life Esports
+0,Hanwha Life Esports,Griffin
+1,SK Telecom T1,Afreeca Freecs
+1,Afreeca Freecs,SK Telecom T1
+1,SK Telecom T1,Afreeca Freecs
+1,SK Telecom T1,SANDBOX Gaming
+1,SK Telecom T1,SANDBOX Gaming
+0,SANDBOX Gaming,SK Telecom T1
+0,DAMWON Gaming,SK Telecom T1
+1,SK Telecom T1,DAMWON Gaming
+1,SK Telecom T1,DAMWON Gaming
+0,Griffin,SK Telecom T1
+0,Griffin,SK Telecom T1
+1,Griffin,SK Telecom T1
+0,Griffin,SK Telecom T1
+0,Hanwha Life Esports,SeolHaeOne Prince
+1,Hanwha Life Esports,SeolHaeOne Prince
+1,SeolHaeOne Prince,Hanwha Life Esports
+0,Team Dynamics,Jin Air Green Wings
+1,Jin Air Green Wings,Team Dynamics
+0,SeolHaeOne Prince,Jin Air Green Wings
+1,SeolHaeOne Prince,Jin Air Green Wings
+1,SeolHaeOne Prince,Jin Air Green Wings
+1,SeolHaeOne Prince,Jin Air Green Wings
+0,Team Dynamics,Hanwha Life Esports
+1,Team Dynamics,Hanwha Life Esports
+0,Team Dynamics,Hanwha Life Esports
+0,Team Dynamics,Hanwha Life Esports
+0,Jin Air Green Wings,Hanwha Life Esports
+0,Jin Air Green Wings,Hanwha Life Esports
+0,Jin Air Green Wings,Hanwha Life Esports
