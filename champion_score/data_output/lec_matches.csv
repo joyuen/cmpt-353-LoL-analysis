@@ -1,0 +1,228 @@
+result,red_team,blue_team
+1,SK Gaming,Fnatic
+0,Excel Esports,Splyce
+1,FC Schalke 04 Esports,Team Vitality
+1,Misfits Gaming,Rogue
+1,G2 Esports,Origen
+0,FC Schalke 04 Esports,G2 Esports
+0,Rogue,Excel Esports
+1,Team Vitality,Splyce
+0,SK Gaming,Misfits Gaming
+1,Origen,Fnatic
+0,Fnatic,Team Vitality
+1,Splyce,Rogue
+0,Excel Esports,G2 Esports
+0,SK Gaming,FC Schalke 04 Esports
+1,Misfits Gaming,Origen
+0,Fnatic,FC Schalke 04 Esports
+0,Excel Esports,SK Gaming
+0,Rogue,G2 Esports
+0,Origen,Splyce
+1,Team Vitality,Misfits Gaming
+1,G2 Esports,SK Gaming
+1,FC Schalke 04 Esports,Splyce
+0,Rogue,Fnatic
+0,Misfits Gaming,Excel Esports
+0,Origen,Team Vitality
+0,Splyce,G2 Esports
+1,FC Schalke 04 Esports,Excel Esports
+1,Origen,SK Gaming
+1,Team Vitality,Rogue
+0,Fnatic,Misfits Gaming
+0,Misfits Gaming,FC Schalke 04 Esports
+1,Splyce,SK Gaming
+0,Rogue,Origen
+0,Excel Esports,Fnatic
+0,Team Vitality,G2 Esports
+1,Origen,FC Schalke 04 Esports
+0,Rogue,SK Gaming
+0,Misfits Gaming,Splyce
+0,Excel Esports,Team Vitality
+0,Fnatic,G2 Esports
+0,Splyce,Fnatic
+0,Excel Esports,Origen
+1,SK Gaming,Team Vitality
+1,FC Schalke 04 Esports,Rogue
+1,G2 Esports,Misfits Gaming
+0,Fnatic,SK Gaming
+0,Excel Esports,Splyce
+1,Team Vitality,FC Schalke 04 Esports
+1,Rogue,Misfits Gaming
+1,Origen,G2 Esports
+0,FC Schalke 04 Esports,G2 Esports
+1,Rogue,Excel Esports
+1,Team Vitality,Splyce
+1,Misfits Gaming,SK Gaming
+0,Origen,Fnatic
+1,G2 Esports,Excel Esports
+0,FC Schalke 04 Esports,SK Gaming
+1,Misfits Gaming,Origen
+1,Splyce,Rogue
+0,Team Vitality,Fnatic
+0,Splyce,Origen
+1,Excel Esports,SK Gaming
+0,Misfits Gaming,Team Vitality
+0,Rogue,G2 Esports
+0,FC Schalke 04 Esports,Fnatic
+1,SK Gaming,G2 Esports
+1,Splyce,FC Schalke 04 Esports
+0,Rogue,Fnatic
+0,Excel Esports,Misfits Gaming
+0,Team Vitality,Origen
+1,Splyce,G2 Esports
+1,Excel Esports,FC Schalke 04 Esports
+1,Origen,SK Gaming
+0,Rogue,Team Vitality
+0,Misfits Gaming,Fnatic
+1,FC Schalke 04 Esports,Misfits Gaming
+1,Splyce,SK Gaming
+1,Fnatic,Excel Esports
+1,Origen,Rogue
+1,G2 Esports,Team Vitality
+1,Splyce,Misfits Gaming
+0,Rogue,SK Gaming
+0,G2 Esports,Fnatic
+0,Team Vitality,Excel Esports
+1,Origen,FC Schalke 04 Esports
+1,Misfits Gaming,G2 Esports
+1,FC Schalke 04 Esports,Rogue
+1,SK Gaming,Team Vitality
+1,Origen,Excel Esports
+0,Splyce,Fnatic
+0,FC Schalke 04 Esports,SK Gaming
+0,Team Vitality,Fnatic
+0,Team Vitality,Fnatic
+1,Fnatic,Team Vitality
+0,Splyce,SK Gaming
+1,Splyce,SK Gaming
+0,SK Gaming,Splyce
+1,Splyce,SK Gaming
+0,Splyce,Fnatic
+0,Fnatic,Splyce
+0,Splyce,Fnatic
+1,Fnatic,Splyce
+0,Origen,G2 Esports
+0,Origen,G2 Esports
+0,Origen,G2 Esports
+0,Fnatic,Origen
+1,Origen,Fnatic
+0,Origen,Fnatic
+0,Fnatic,Origen
+0,Origen,G2 Esports
+1,G2 Esports,Origen
+1,G2 Esports,Origen
+0,Splyce,G2 Esports
+0,Team Vitality,Origen
+1,Misfits Gaming,Rogue
+0,SK Gaming,Fnatic
+0,Excel Esports,FC Schalke 04 Esports
+1,Rogue,Excel Esports
+0,FC Schalke 04 Esports,SK Gaming
+0,Team Vitality,Splyce
+1,Fnatic,Misfits Gaming
+1,G2 Esports,Origen
+0,Excel Esports,Misfits Gaming
+0,Team Vitality,Rogue
+0,Origen,Fnatic
+1,FC Schalke 04 Esports,Splyce
+0,SK Gaming,G2 Esports
+1,Splyce,Excel Esports
+0,Rogue,SK Gaming
+0,Misfits Gaming,Origen
+1,Fnatic,FC Schalke 04 Esports
+0,Team Vitality,G2 Esports
+1,Team Vitality,Excel Esports
+1,Splyce,Rogue
+1,Origen,FC Schalke 04 Esports
+0,Misfits Gaming,SK Gaming
+1,Fnatic,G2 Esports
+0,SK Gaming,Team Vitality
+1,FC Schalke 04 Esports,Misfits Gaming
+1,Splyce,Origen
+0,Excel Esports,Fnatic
+0,Rogue,G2 Esports
+1,FC Schalke 04 Esports,Rogue
+0,SK Gaming,Splyce
+0,Misfits Gaming,G2 Esports
+1,Origen,Excel Esports
+0,Team Vitality,Fnatic
+1,Excel Esports,SK Gaming
+0,Misfits Gaming,Team Vitality
+0,Origen,Rogue
+1,G2 Esports,FC Schalke 04 Esports
+1,Splyce,Fnatic
+0,Misfits Gaming,Splyce
+0,Team Vitality,FC Schalke 04 Esports
+0,Excel Esports,G2 Esports
+0,Fnatic,Rogue
+1,Origen,SK Gaming
+1,FC Schalke 04 Esports,Excel Esports
+1,Misfits Gaming,Rogue
+1,Team Vitality,Origen
+1,Fnatic,SK Gaming
+0,Splyce,G2 Esports
+0,SK Gaming,FC Schalke 04 Esports
+1,Excel Esports,Rogue
+0,Fnatic,Misfits Gaming
+0,Team Vitality,Splyce
+0,Origen,G2 Esports
+1,Team Vitality,Rogue
+0,Misfits Gaming,Excel Esports
+1,Splyce,FC Schalke 04 Esports
+0,SK Gaming,G2 Esports
+1,Fnatic,Origen
+1,Excel Esports,Splyce
+1,Rogue,SK Gaming
+0,G2 Esports,Team Vitality
+1,Origen,Misfits Gaming
+0,FC Schalke 04 Esports,Fnatic
+0,Misfits Gaming,SK Gaming
+1,Team Vitality,Excel Esports
+0,Rogue,Splyce
+1,FC Schalke 04 Esports,Origen
+1,G2 Esports,Fnatic
+0,Misfits Gaming,FC Schalke 04 Esports
+0,Team Vitality,SK Gaming
+0,Excel Esports,Fnatic
+0,Origen,Splyce
+0,Rogue,G2 Esports
+1,Splyce,SK Gaming
+1,Rogue,FC Schalke 04 Esports
+0,Excel Esports,Origen
+0,Misfits Gaming,G2 Esports
+0,Team Vitality,Fnatic
+1,Misfits Gaming,Team Vitality
+1,SK Gaming,Excel Esports
+1,Fnatic,Splyce
+0,Origen,Rogue
+1,FC Schalke 04 Esports,G2 Esports
+1,Misfits Gaming,Splyce
+1,SK Gaming,Origen
+0,Team Vitality,FC Schalke 04 Esports
+1,G2 Esports,Excel Esports
+0,Rogue,Fnatic
+1,Team Vitality,SK Gaming
+0,Splyce,Rogue
+0,Splyce,Rogue
+1,Rogue,Splyce
+0,Team Vitality,FC Schalke 04 Esports
+1,FC Schalke 04 Esports,Team Vitality
+1,Team Vitality,FC Schalke 04 Esports
+1,FC Schalke 04 Esports,Team Vitality
+0,FC Schalke 04 Esports,Rogue
+1,FC Schalke 04 Esports,Rogue
+1,FC Schalke 04 Esports,Rogue
+1,FC Schalke 04 Esports,Rogue
+0,G2 Esports,Fnatic
+0,G2 Esports,Fnatic
+0,Fnatic,G2 Esports
+1,G2 Esports,Fnatic
+0,Fnatic,G2 Esports
+1,Fnatic,FC Schalke 04 Esports
+0,FC Schalke 04 Esports,Fnatic
+0,FC Schalke 04 Esports,Fnatic
+1,Fnatic,G2 Esports
+0,Fnatic,G2 Esports
+1,Fnatic,G2 Esports
+1,G2 Esports,Fnatic
+0,Fnatic,G2 Esports

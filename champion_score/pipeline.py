@@ -3,7 +3,7 @@ import csv
 
 #data loading and filtering
 def load_data(matches):
-    matches = pd.read_csv('data/'+matches)
+    matches = pd.read_csv(matches)
     matches = pre_process(matches)
     return matches
 
@@ -33,7 +33,7 @@ def main():
     #set match and champion data
     #lpl data for 2019 was largely missing and was not used
     #only the first half of the lck data was taken as they play more games in the first half than the other regions in the entire year
-    match = load_data('2019.csv') 
+    match = load_data('data/2019.csv') 
     lcs = load_data_agg('data/LCS_spring.csv','data/LCS_springp.csv' ,'data/LCS_summer.csv', 'data/LCS_summerp.csv')
     lec = load_data_agg('data/LEC_spring.csv','data/LEC_springp.csv' ,'data/LEC_summer.csv', 'data/LEC_summerp.csv')
     lck = load_data_agg_lck('data/LCK_spring.csv','data/LCK_springp.csv')
